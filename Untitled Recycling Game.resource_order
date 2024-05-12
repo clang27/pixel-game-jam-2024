@@ -16,5 +16,10 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_pier","order":2,"path":"objects/obj_pier/obj_pier.yy",},
+    {"name":"obj_shoreline","order":1,"path":"objects/obj_shoreline/obj_shoreline.yy",},
+    {"name":"spr_pier","order":2,"path":"sprites/spr_pier/spr_pier.yy",},
+    {"name":"spr_shoreline","order":1,"path":"sprites/spr_shoreline/spr_shoreline.yy",},
+  ],
 }

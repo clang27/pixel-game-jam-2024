@@ -34,7 +34,14 @@
   },
   "name":"Untitled Recycling Game",
   "resources":[
+    {"id":{"name":"obj_pier","path":"objects/obj_pier/obj_pier.yy",},},
+    {"id":{"name":"obj_shoreline","path":"objects/obj_shoreline/obj_shoreline.yy",},},
+    {"id":{"name":"obj_test_drag","path":"objects/obj_test_drag/obj_test_drag.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"sh_outline","path":"shaders/sh_outline/sh_outline.yy",},},
+    {"id":{"name":"spr_pier","path":"sprites/spr_pier/spr_pier.yy",},},
+    {"id":{"name":"spr_shoreline","path":"sprites/spr_shoreline/spr_shoreline.yy",},},
+    {"id":{"name":"spr_test_drag","path":"sprites/spr_test_drag/spr_test_drag.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
@@ -43,6 +50,6 @@
   ],
   "templateType":"game",
   "TextureGroups":[
-    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":false,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }
