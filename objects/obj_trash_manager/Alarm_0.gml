@@ -1,0 +1,1 @@
+spawn_trash(irandom_range(0, 3));
