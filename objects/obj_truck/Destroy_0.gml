@@ -1,0 +1,1 @@
+obj_truck_manager.truck_count--;

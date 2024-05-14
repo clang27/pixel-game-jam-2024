@@ -1,4 +1,4 @@
-if (mouse_over && !dragging) {
+if (mouse_over && !currently_dragging_anything()) {
 	shader_set(sh_outline);
 	var _texture = sprite_get_texture(sprite_index, image_index);
 	var _width = texture_get_texel_width(_texture);

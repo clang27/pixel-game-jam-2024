@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_shoreline",
-  "bboxMode":1,
+  "bboxMode":2,
   "bbox_bottom":199,
   "bbox_left":0,
   "bbox_right":959,
-  "bbox_top":0,
+  "bbox_top":16,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

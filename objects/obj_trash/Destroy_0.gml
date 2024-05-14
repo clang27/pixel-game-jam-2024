@@ -1,0 +1,1 @@
+obj_trash_manager.trash_count--;

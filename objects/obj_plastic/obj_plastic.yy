@@ -4,7 +4,10 @@
   "eventList":[],
   "managed":true,
   "name":"obj_plastic",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"drift_speed","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"reward","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10",},
+  ],
   "parent":{
     "name":"Trash",
     "path":"folders/Objects/Trash.yy",

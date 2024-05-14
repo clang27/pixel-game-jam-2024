@@ -1,1 +1,0 @@
-dragging = true;
