@@ -1,4 +1,4 @@
-obj_truck_manager.truck_count++;
+obj_truck_manager.add_truck();
 
 trash_hovering_correctly = false;
 trash_hovering_incorrectly = false;
@@ -10,7 +10,7 @@ outline_pixel_width = shader_get_uniform(sh_outline, "pixel_width");
 outline_color = shader_get_uniform(sh_outline, "color");
 
 drive_in_speed = 2;
-drive_out_speed = 0.6;
+drive_out_speed = 3;
 wait_time = irandom_range(1, 6);
 
 reached_top_path = false;

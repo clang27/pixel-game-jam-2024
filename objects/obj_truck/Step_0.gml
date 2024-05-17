@@ -2,6 +2,8 @@ if (disabled) {return;}
 
 var _dt = delta_time / 1000000;
 
+if (disabled) {return;}
+
 #region Drive To Goal
 	var _speed = !reached_top_path ? drive_in_speed : drive_out_speed;
 	y = lerp(y, goal_y, _speed * _dt);

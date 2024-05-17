@@ -1,7 +1,7 @@
 spawn_min_x = 50;
-spawn_max_x = room_width - 50;
-spawn_min_y = -50;
-spawn_max_y = -30;
+spawn_max_x = room_width - 50 - GAMEPLAY_MARGIN_RIGHT;
+spawn_min_y = -10;
+spawn_max_y = -1;
 trash_count = 0;
 last_touched = noone;
 disabled = false;
@@ -24,14 +24,14 @@ get_trash_object = function(_index) {
 }
 
 get_random_index = function() {
-	var _rng = random(100) + (obj_level_manager.level * 3);
-	show_debug_message("Trash RNG: {0}", _rng);
+	var _rng = random(100);
+	show_debug_message("Trash RNG: {0}", _rng); 
 	
-	if (_rng < 80) {
+	if (_rng < 40) {
 		return 0;
-	} else if (_rng < 88) {
+	} else if (_rng < 70) {
 		return 1;
-	} else if (_rng < 96) {
+	} else if (_rng < 90) {
 		return 2;
 	}
 	
@@ -39,12 +39,12 @@ get_random_index = function() {
 }
 
 get_random_interval = function() {
-	var _a = 8 - obj_level_manager.level;
-	var _b = obj_level_manager.timer / 300_000_000;
+	var _a = 8;
+	var _b = obj_level_manager.timer / 1_000_000;
 	var _c = game_get_speed(gamespeed_fps);
-	show_debug_message("{2} * (random({0}) + {0} - {1})", _a, _b, _c);
+	show_debug_message("Next trash in: {0}", clamp(_c * (random(_a) + (_a/2) - _b), 60, 500));
 	
-	return clamp(_c * (random(_a) + _a - _b), 6, 600);
+	return clamp(_c * (random(_a) + (_a/2) - _b), 60, 500);
 }
 
 // Starting trash

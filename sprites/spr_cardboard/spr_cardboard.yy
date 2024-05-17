@@ -23,7 +23,7 @@
   ],
   "name":"spr_cardboard",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Trash",
     "path":"folders/Sprites/Trash.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":20,
-    "yorigin":20,
+    "yorigin":36,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

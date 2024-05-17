@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_cardboard_truck",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_cardboard_truck",
   "overriddenProperties":[],
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cardboard_truck",
-    "path":"sprites/spr_cardboard_truck/spr_cardboard_truck.yy",
+    "name":"spr_truck",
+    "path":"sprites/spr_truck/spr_truck.yy",
   },
   "spriteMaskId":null,
   "visible":true,

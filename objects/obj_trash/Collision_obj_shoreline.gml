@@ -1,1 +1,0 @@
-obj_game_manager.game_over();

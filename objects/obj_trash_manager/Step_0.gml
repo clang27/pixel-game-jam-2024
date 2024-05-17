@@ -1,6 +1,6 @@
 if (disabled) {return;}
 
-if (trash_count < 2) {
+if (trash_count <= 6) {
 	spawn_trash();
 }
 

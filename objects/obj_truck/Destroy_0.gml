@@ -1,1 +1,1 @@
-obj_truck_manager.truck_count--;
+obj_truck_manager.remove_truck();
