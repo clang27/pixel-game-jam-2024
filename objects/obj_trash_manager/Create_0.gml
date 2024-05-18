@@ -3,6 +3,7 @@ spawn_max_x = room_width - 50 - GAMEPLAY_MARGIN_RIGHT;
 spawn_min_y = -10;
 spawn_max_y = -1;
 trash_count = 0;
+max_trash_count = 6;
 last_touched = noone;
 disabled = false;
 
@@ -39,12 +40,13 @@ get_random_index = function() {
 }
 
 get_random_interval = function() {
-	var _a = 8;
+	var _a = 6;
 	var _b = obj_level_manager.timer / 1_000_000;
 	var _c = game_get_speed(gamespeed_fps);
-	show_debug_message("Next trash in: {0}", clamp(_c * (random(_a) + (_a/2) - _b), 60, 500));
+	var _int = clamp(_c * (random(_a/4) + _a - _b), 60, 500);
 	
-	return clamp(_c * (random(_a) + (_a/2) - _b), 60, 500);
+	show_debug_message("Next trash in: {0} seconds", string(_int/60));
+	return _int;
 }
 
 // Starting trash

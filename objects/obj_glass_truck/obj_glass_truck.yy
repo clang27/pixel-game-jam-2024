@@ -7,7 +7,7 @@
   "managed":true,
   "name":"obj_glass_truck",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_truck","path":"objects/obj_truck/obj_truck.yy",},"propertyId":{"name":"accepted_trash","path":"objects/obj_truck/obj_truck.yy",},"resource":{"name":"obj_glass","path":"objects/obj_glass/obj_glass.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_glass",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_truck","path":"objects/obj_truck/obj_truck.yy",},"propertyId":{"name":"accepted_trash","path":"objects/obj_truck/obj_truck.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Glass",},
   ],
   "parent":{
     "name":"Trucks",

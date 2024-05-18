@@ -19,7 +19,7 @@ if (!disabled && mouse_over && !currently_dragging_anything()) {
 
 				shader_set_uniform_f(in_texel, _width, _height);
 				shader_set_uniform_f(outline_pixel_width, 2);
-				if (_id.object_index == object_index && !would_be_too_big(_id.upgrades)) {
+				if (_id.object_index == object_index && !would_be_too_big(_id.data.size)) {
 					shader_set_uniform_f(outline_color, 0.0, 1.0, 0.0, 1.0);
 				} else {
 					shader_set_uniform_f(outline_color, 1.0, 0.0, 0.0, 1.0);
@@ -29,10 +29,16 @@ if (!disabled && mouse_over && !currently_dragging_anything()) {
 	}
 }
 
-draw_self();
-shader_reset();
-
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_set_color(c_black);
-draw_text(x, y - (sprite_yoffset/2), string(weight));
+if (image_xscale > 0.05) {
+	draw_self();
+	shader_reset();
+	
+	if (!obj_game_manager.debug_mode) return;
+	
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_set_color(c_black);
+	draw_text(x, y - (sprite_yoffset/2), string(weight));
+} else {
+	shader_reset();
+}

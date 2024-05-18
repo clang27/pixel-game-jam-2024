@@ -5,8 +5,8 @@
   "managed":true,
   "name":"obj_cardboard",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"weight","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.8",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"drift_speed","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.8",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"weight","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"drift_speed","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.7",},
   ],
   "parent":{
     "name":"Trash",

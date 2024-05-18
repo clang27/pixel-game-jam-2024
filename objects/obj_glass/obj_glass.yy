@@ -6,8 +6,9 @@
   "name":"obj_glass",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"weight","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"original_reward","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"original_reward","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"100",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"drift_speed","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trash","path":"objects/obj_trash/obj_trash.yy",},"propertyId":{"name":"type","path":"objects/obj_trash/obj_trash.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Glass",},
   ],
   "parent":{
     "name":"Trash",

@@ -7,7 +7,7 @@
   "managed":true,
   "name":"obj_plastic_truck",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_truck","path":"objects/obj_truck/obj_truck.yy",},"propertyId":{"name":"accepted_trash","path":"objects/obj_truck/obj_truck.yy",},"resource":{"name":"obj_plastic","path":"objects/obj_plastic/obj_plastic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_plastic",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_truck","path":"objects/obj_truck/obj_truck.yy",},"propertyId":{"name":"accepted_trash","path":"objects/obj_truck/obj_truck.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Plastic",},
   ],
   "parent":{
     "name":"Trucks",

@@ -15,6 +15,9 @@ disable_all = function() {
 	obj_truck_manager.alarm[0] = -1;
 	obj_level_manager.disabled = true;
 	obj_level_manager.alarm[0] = -1;
+	obj_whirlpool_manager.disabled = true;
+	obj_whirlpool_manager.alarm[0] = -1;
+	obj_dump_score_panel.disabled = true;
 	
 	prior_button_state = obj_spawn_truck_button.active
 	obj_spawn_truck_button.active = false;
@@ -27,20 +30,38 @@ disable_all = function() {
 	with(obj_truck) {
 		disabled = true;
 	}
+	
+	with(obj_wall) {
+		disabled = true;
+	}
+	
+	with(obj_whirlpool) {
+		disabled = true;
+	}
 }
 
 enable_all = function() {
-	obj_trash_manager.disabled = false;
-	obj_truck_manager.disabled = false;
-	obj_level_manager.disabled = false;
-	obj_spawn_truck_button.active = prior_button_state;
+	obj_trash_manager.disabled = game_is_over;
+	obj_truck_manager.disabled = game_is_over;
+	obj_level_manager.disabled = game_is_over;
+	obj_whirlpool_manager.disabled = game_is_over;
+	obj_dump_score_panel.disabled = game_is_over;
+	obj_spawn_truck_button.active = prior_button_state && !game_is_over;
 	
 	with(obj_trash) {
-		disabled = false;
+		disabled = obj_game_manager.game_is_over;
 	}
 	
 	with(obj_truck) {
-		disabled = false;
+		disabled = obj_game_manager.game_is_over;
+	}
+	
+	with(obj_wall) {
+		disabled = obj_game_manager.game_is_over;
+	}
+	
+	with(obj_whirlpool) {
+		disabled = obj_game_manager.game_is_over;
 	}
 }
 
@@ -58,3 +79,5 @@ game_over = function() {
 	game_is_over = true;
 	disable_all();
 }
+
+obj_truck_manager.next_truck();

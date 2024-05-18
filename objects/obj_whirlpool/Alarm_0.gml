@@ -1,0 +1,2 @@
+active = false;
+disappearing = true;

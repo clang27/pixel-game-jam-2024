@@ -9,10 +9,16 @@ in_texel = shader_get_uniform(sh_outline, "in_texel");
 outline_pixel_width = shader_get_uniform(sh_outline, "pixel_width");
 outline_color = shader_get_uniform(sh_outline, "color");
 
-drive_in_speed = 2;
-drive_out_speed = 3;
-wait_time = irandom_range(1, 6);
-
-reached_top_path = false;
-waiting_at_top_path = false;
 disabled = false;
+icon_offset = 120;
+
+trash_holding = 0;
+trash_max_hold = irandom_range(3,6);
+
+would_be_too_big = function(_amount) {
+	return trash_holding + _amount > trash_max_hold;
+}
+
+add_trash = function(_amount) {
+	trash_holding += _amount;
+}
