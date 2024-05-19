@@ -9,6 +9,7 @@ moving_up = false;
 move_speed = 3;
 wait_time = 3;
 disabled = false;
+score_length = 5;
 
 padding_top = 25;
 first_column = 25;
@@ -17,7 +18,7 @@ third_column = second_column + 40;
 
 line_width = 15;
 
-goal_y = ystart + (12 * 16);
+goal_y = ystart + (12 * 15);
 
 show = function(_truck_type, _trash_list) {
 	truck_type = _truck_type;
@@ -56,7 +57,10 @@ draw_info = function(_trash_type, _y) {
 			_points += (_d.points * _d.size) * ((truck_type == "Any" || truck_type == _trash_type) ? 1 : -1);
 		}
 	}
+	
+	var _color = (truck_type == "Any" || truck_type == _trash_type) ? CYAN : HOT_PINK;
+	if (_count == 0) { _color = WHITE; }
+	draw_set_color(_color);
 	draw_text(x + first_column, _y, _trash_type);
-	draw_text(x + second_column, _y, "x"+string(_count));
-	draw_text(x + third_column, _y, "= "+string(_points));
+	draw_text(x + third_column, _y, "x"+string(_count));
 }

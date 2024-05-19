@@ -38,6 +38,7 @@ next_truck = function () {
 		obj_spawn_truck_lever.active = false;
 		driving_up = true;
 	} else if (!driving_down && truck_count == max_trucks) {
+		audio_play_sound(snd_drive_off, 30, false);
 		driving_down = true;
 		obj_spawn_truck_lever.active = false;
 	}

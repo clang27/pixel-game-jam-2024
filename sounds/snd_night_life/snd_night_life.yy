@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_night_life.ogg",
   "type":1,
-  "volume":0.66,
+  "volume":0.31,
 }

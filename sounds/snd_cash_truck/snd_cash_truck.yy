@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_cash_truck",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.327823,
+  "name":"snd_cash_truck",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cash_truck.wav",
+  "type":0,
+  "volume":0.7,
+}

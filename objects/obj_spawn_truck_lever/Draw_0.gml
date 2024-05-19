@@ -6,12 +6,12 @@ if (highlighted) {
 	
 	shader_set_uniform_f(in_texel, _width, _height);
 	shader_set_uniform_f(outline_pixel_width, 2);
-	shader_set_uniform_f(outline_color, 
-		!active ? 1.0 : 0.0, 
-		active ? 1.0 : 0.0,
-		0.0,
-		1.0
-	);
+	
+	if (active) {
+		set_outline_color(CYAN, outline_color);
+	} else {
+		set_outline_color(HOT_PINK, outline_color);
+	}
 }
 
 draw_self();

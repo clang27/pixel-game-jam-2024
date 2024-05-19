@@ -2,17 +2,35 @@ if (disabled) return;
 
 var _dt = delta_time / 1000000;
 var _id = id;
+var _mouse_x = obj_cursor.x;
+var _mouse_y = obj_cursor.y;
+
+particle_timer += _dt;
 
 #region Check Mouse		
-	if (dragging && !mouse_check_button(mb_left)) {
+	if (dragging && letgo) {
 		dragging = false;
+		letgo = false;
 	
 		// If let go onto truck, score appropriate points
 		with(obj_truck) {
 			if (place_meeting(x, y, _id) && !would_be_too_big(_id.data.size)) {
 				add_trash(_id.data.size);
 				obj_truck_manager.add_trash_data(_id.data);
+				
+				part_system_clear(_id.part_system_bg);
+				part_system_clear(_id.part_system_fg);
+				part_system_destroy(_id.part_system_bg);
+				part_system_destroy(_id.part_system_fg);
+				
+				if (accepted_trash == "Any" || _id.type == accepted_trash) {
+					audio_play_sound(snd_correct_trash, 20, false);
+				} else {
+					audio_play_sound(snd_wrong_trash, 20, false);
+				}
+				
 				instance_destroy(_id);
+				return;
 			}
 		}
 		
@@ -27,25 +45,37 @@ var _id = id;
 				image_angle = _id.image_angle;
 				x_velocity = _id.x_velocity / 8;
 				y_velocity = _id.y_velocity / 8;
+				
+				audio_play_sound(snd_powerup, 20, false);
+				
+				part_system_clear(_id.part_system_bg);
+				part_system_clear(_id.part_system_fg);
+				part_system_destroy(_id.part_system_bg);
+				part_system_destroy(_id.part_system_fg);
 				instance_destroy(_id);
+				return;
 			}
 		}
 		
+		audio_play_sound(snd_splash, 20, false);
 	}
 #endregion
 
 #region Drag Position
 	var _half_width = sprite_width / 2;
 	var _half_height = sprite_height / 2;
+	var _offedge = false;
 		
 	if(dragging) {			
-		var _goal_x = clamp(mouse_x, _half_width, room_width - _half_width);
-		var _goal_y = clamp(mouse_y, 0, room_height - _half_height - GAMEPLAY_MARGIN_BOTTOM);
+		var _goal_x = clamp(_mouse_x + (-sprite_xoffset + _half_width), _half_width, room_width - _half_width);
+		var _goal_y = clamp(_mouse_y + (-sprite_yoffset + _half_height + _half_height), 0, room_height - _half_height - GAMEPLAY_MARGIN_BOTTOM);
 		
 		x = lerp(x, _goal_x, _dt * (drag_speed / weight));
 		y = lerp(y, _goal_y, _dt * (drag_speed / weight));
 		x_velocity = clamp(x - xprevious, -30, 30);
 		y_velocity = clamp(y - yprevious, -30, 30);
+		
+		_offedge = x >= room_width - _half_width - GAMEPLAY_MARGIN_RIGHT;
 	} else {
 		x += x_velocity;
 		y += y_velocity;
@@ -87,8 +117,12 @@ var _id = id;
 			delay_growth = true;
 			alarm[0] = game_get_speed(gamespeed_fps) * 0.4;
 		} else if (!delay_growth) {
-			image_xscale = lerp(image_xscale, target_scale, _dt * drag_growth_speed / 4);
-			image_yscale = lerp(image_yscale, target_scale, _dt * drag_growth_speed / 4);
+			image_xscale = lerp(image_xscale, target_scale, _dt * drag_growth_speed / 8);
+			image_yscale = lerp(image_yscale, target_scale, _dt * drag_growth_speed / 8);
+			if (abs(image_xscale - target_scale) < 0.02) {
+				image_xscale = target_scale;
+				image_yscale = target_scale;
+			}
 		} 
 	} else {
 		image_xscale = lerp(image_xscale, drag_growth_scale, _dt * drag_growth_speed);
@@ -97,8 +131,6 @@ var _id = id;
 #endregion
 
 #region Depth
-	depth = start_depth - (image_yscale - 1.0);
-	if (obj_trash_manager.last_touched == id) {
-		depth -= 5;
-	}
+	depth = start_depth - ((image_yscale - 1.0)*200) - y;
+	depth = ceil(depth);
 #endregion

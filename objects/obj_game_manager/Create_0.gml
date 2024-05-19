@@ -1,3 +1,10 @@
+#macro HOT_PINK #ba41d9
+#macro PURPLE #6c29a6
+#macro DARK_BLUE #281d73
+#macro WHITE #dae7f2
+#macro CYAN #73c7e5
+#macro BLACK #111126
+
 function play_game_audio() {
 	audio_play_sound(snd_night_life, 5, true);
 }
@@ -18,6 +25,7 @@ disable_all = function() {
 	obj_whirlpool_manager.disabled = true;
 	obj_whirlpool_manager.alarm[0] = -1;
 	obj_dump_score_panel.disabled = true;
+	obj_cursor.disabled = true;
 	
 	prior_button_state = obj_spawn_truck_lever.active
 	obj_spawn_truck_lever.active = false;
@@ -43,6 +51,7 @@ enable_all = function() {
 	obj_whirlpool_manager.disabled = game_is_over;
 	obj_dump_score_panel.disabled = game_is_over;
 	obj_spawn_truck_lever.active = prior_button_state && !game_is_over;
+	obj_cursor.disabled = game_is_over;
 	
 	with(obj_trash) {
 		disabled = obj_game_manager.game_is_over;

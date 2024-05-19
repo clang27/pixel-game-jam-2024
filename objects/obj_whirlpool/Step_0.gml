@@ -58,6 +58,7 @@ var _id = id;
 			y = _id.partner.y + sprite_height;
 			
 			show_debug_message("Teleporting {0} to ({1}, {2})", id.data.type, x, y);
+			audio_play_sound(snd_whirlpool, 5, false);
 		} else if (_touching_whirlpool && !_id.entrance && _id.active && image_xscale >= 0.1) {
 			y_velocity += 5 / weight * _dt;
 		}
