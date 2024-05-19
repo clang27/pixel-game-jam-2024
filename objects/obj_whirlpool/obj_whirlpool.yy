@@ -12,8 +12,8 @@
   "name":"obj_whirlpool",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Obstacles",
+    "path":"folders/Objects/Obstacles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_whirlpool",
-    "path":"sprites/spr_whirlpool/spr_whirlpool.yy",
+    "name":"spr_entrance_whirlpool",
+    "path":"sprites/spr_entrance_whirlpool/spr_entrance_whirlpool.yy",
   },
   "spriteMaskId":null,
   "visible":true,

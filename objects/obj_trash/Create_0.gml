@@ -12,10 +12,11 @@ disabled = false;
 start_depth = depth;
 max_upgrades = 4;
 delay_growth = false;
+image_index = 0;
 
-target_scale = 1;
 goal_y_velocity = drift_speed / (4 * sqrt(sqrt(weight)));
-drag_growth_scale = target_scale + 0.25;
+target_scale = 1;
+drag_growth_scale = 1.25;
 
 in_texel = shader_get_uniform(sh_outline, "in_texel");
 outline_pixel_width = shader_get_uniform(sh_outline, "pixel_width");
@@ -28,6 +29,8 @@ data = {
 	weight: id.weight
 }
 
+
+
 would_be_too_big = function(_upgrades_amount) {
 	return data.size + _upgrades_amount > max_upgrades;
 }
@@ -36,9 +39,8 @@ upgrade_size = function(_weight_amount, _upgrade_amount) {
 	data.size += _upgrade_amount;
 	weight += _weight_amount;
 
-	target_scale = (data.size * 0.5) + 0.5;
+	image_index = data.size - 1;
 	goal_y_velocity = drift_speed / (4 * sqrt(sqrt(weight)));
-	drag_growth_scale = target_scale + 0.25;
 }
 
 currently_dragging_anything = function() {

@@ -22,6 +22,11 @@ var _id = id;
 			
 			if (place_meeting(x, y, _id) && _id.object_index == object_index  && !would_be_too_big(_id.data.size)) {
 				upgrade_size(_id.weight, _id.data.size);
+				image_xscale = _id.image_xscale;
+				image_yscale = _id.image_yscale;
+				image_angle = _id.image_angle;
+				x_velocity = _id.x_velocity / 8;
+				y_velocity = _id.y_velocity / 8;
 				instance_destroy(_id);
 			}
 		}
@@ -80,7 +85,7 @@ var _id = id;
 		
 		if (_size_change_from_whirlpool) {
 			delay_growth = true;
-			alarm[0] = game_get_speed(gamespeed_fps) * 1;
+			alarm[0] = game_get_speed(gamespeed_fps) * 0.4;
 		} else if (!delay_growth) {
 			image_xscale = lerp(image_xscale, target_scale, _dt * drag_growth_speed / 4);
 			image_yscale = lerp(image_yscale, target_scale, _dt * drag_growth_speed / 4);

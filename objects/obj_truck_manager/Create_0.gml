@@ -1,5 +1,5 @@
 spawn_x = obj_truck_placeholder.x;
-spawn_y = room_height + sprite_yoffset + 5000;
+spawn_y = room_height + sprite_yoffset + 3000;
 drive_goal_x = obj_truck_placeholder.x;
 drive_goal_y = obj_truck_placeholder.y;
 truck_count = 0;
@@ -12,7 +12,7 @@ drive_in_speed = 2.1;
 y_acceleration = 5;
 y_velocity = 0;
 
-max_wild_truck_timer = 5;
+max_wild_truck_timer = 8;
 current_wild_truck_timer = max_wild_truck_timer;
 active_wild_truck = false;
 
@@ -35,11 +35,11 @@ next_truck = function () {
 	
 	if (!driving_up && truck_count < max_trucks) {
 		spawn_truck(get_random_index());
-		obj_spawn_truck_button.active = false;
+		obj_spawn_truck_lever.active = false;
 		driving_up = true;
 	} else if (!driving_down && truck_count == max_trucks) {
 		driving_down = true;
-		obj_spawn_truck_button.active = false;
+		obj_spawn_truck_lever.active = false;
 	}
 }
 
@@ -74,6 +74,10 @@ get_truck_object = function(_index) {
 get_random_index = function() {
 	var _rng = random(100);
 	show_debug_message("Truck RNG: {0}", _rng);
+	
+	if (current_time < 20000) {
+		_rng -= 11;
+	}
 	
 	if (_rng <= 25) {
 		return 0;

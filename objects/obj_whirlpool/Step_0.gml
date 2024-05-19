@@ -12,16 +12,16 @@ var _id = id;
 		image_xscale = lerp(image_xscale, _goal_scale, _grow_speed);
 		image_yscale = lerp(image_yscale, _goal_scale, _grow_speed);
 		image_alpha = lerp(image_alpha, _goal_alpha, _grow_speed);
-		active = appearing && image_xscale > target_scale - 0.1;
+		active = appearing && image_xscale > target_scale - (target_scale * 0.1);
 		
-		if (appearing && image_xscale >= target_scale - 0.01) {
+		if (appearing && image_xscale >= target_scale - (target_scale * 0.01)) {
 			image_xscale = target_scale;
 			image_yscale = target_scale;
 			image_alpha = 1;
 			
 			alarm[0] = game_get_speed(gamespeed_fps) * active_period;
 			appearing = false;
-		} else if (disappearing && image_xscale <= 0.01) {
+		} else if (disappearing && image_xscale <= 0.02) {
 			instance_destroy(id);
 			return;
 		}
@@ -40,10 +40,10 @@ var _id = id;
 				var _direction = degtorad(point_direction(_id.x, _id.y, _center_x, _center_y));
 				var _distance = clamp(point_distance(_id.x, _id.y, _center_x, _center_y), 8, infinity);
 			
-				var _force = _id.entrance ? _id.suck_force : 10;
-			
-				x_velocity += (cos(_direction) / sqr(_distance / 8)) * -_force * _dt / weight;
-				y_velocity += (sin(_direction) / sqr(_distance / 8)) * _force * _dt / weight;
+				if (_id.entrance) {
+					x_velocity += (cos(_direction) / sqr(_distance / 8)) * -_id.suck_force * _dt / weight;
+					y_velocity += (sin(_direction) / sqr(_distance / 8)) * _id.suck_force * _dt / weight;
+				}
 			}
 		}
 	}
@@ -58,6 +58,8 @@ var _id = id;
 			y = _id.partner.y + sprite_height;
 			
 			show_debug_message("Teleporting {0} to ({1}, {2})", id.data.type, x, y);
+		} else if (_touching_whirlpool && !_id.entrance && _id.active && image_xscale >= 0.1) {
+			y_velocity += 5 / weight * _dt;
 		}
 	}
 #endregion

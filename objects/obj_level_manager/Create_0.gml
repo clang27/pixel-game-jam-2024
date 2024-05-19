@@ -15,7 +15,7 @@ ocean_y_amplitude = 20;
 disabled = false;
 
 get_base_y_velocity = function() {
-	return 0.3 + timer/1000;
+	return 0.25 + timer/450;
 }
 
 get_death_y = function() {

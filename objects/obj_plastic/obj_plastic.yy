@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_plastic",
-    "path":"sprites/spr_plastic/spr_plastic.yy",
+    "name":"spr_tire",
+    "path":"sprites/spr_tire/spr_tire.yy",
   },
   "spriteMaskId":null,
   "visible":true,

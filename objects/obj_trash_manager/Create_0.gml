@@ -40,8 +40,8 @@ get_random_index = function() {
 }
 
 get_random_interval = function() {
-	var _a = 6;
-	var _b = obj_level_manager.timer / 1_000_000;
+	var _a = 5;
+	var _b = obj_level_manager.timer / 600_000;
 	var _c = game_get_speed(gamespeed_fps);
 	var _int = clamp(_c * (random(_a/4) + _a - _b), 60, 500);
 	

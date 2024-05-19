@@ -27,7 +27,7 @@ var _id = id;
 				if (accepted_trash == "Any") {
 					_id.active_wild_truck = true;
 				} else {
-					obj_spawn_truck_button.active = true;
+					obj_spawn_truck_lever.active = true;
 				}
 			}
 		}

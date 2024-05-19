@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":223.93759,
+  "duration":132.97737,
   "name":"snd_night_life",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_night_life.ogg",
   "type":1,
-  "volume":0.0,
+  "volume":0.66,
 }

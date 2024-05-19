@@ -19,8 +19,8 @@ disable_all = function() {
 	obj_whirlpool_manager.alarm[0] = -1;
 	obj_dump_score_panel.disabled = true;
 	
-	prior_button_state = obj_spawn_truck_button.active
-	obj_spawn_truck_button.active = false;
+	prior_button_state = obj_spawn_truck_lever.active
+	obj_spawn_truck_lever.active = false;
 	
 	with(obj_trash) {
 		dragging = false;
@@ -28,10 +28,6 @@ disable_all = function() {
 	}
 	
 	with(obj_truck) {
-		disabled = true;
-	}
-	
-	with(obj_wall) {
 		disabled = true;
 	}
 	
@@ -46,17 +42,13 @@ enable_all = function() {
 	obj_level_manager.disabled = game_is_over;
 	obj_whirlpool_manager.disabled = game_is_over;
 	obj_dump_score_panel.disabled = game_is_over;
-	obj_spawn_truck_button.active = prior_button_state && !game_is_over;
+	obj_spawn_truck_lever.active = prior_button_state && !game_is_over;
 	
 	with(obj_trash) {
 		disabled = obj_game_manager.game_is_over;
 	}
 	
 	with(obj_truck) {
-		disabled = obj_game_manager.game_is_over;
-	}
-	
-	with(obj_wall) {
 		disabled = obj_game_manager.game_is_over;
 	}
 	
