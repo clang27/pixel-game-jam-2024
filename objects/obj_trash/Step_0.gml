@@ -117,9 +117,9 @@ particle_timer += _dt;
 			delay_growth = true;
 			alarm[0] = game_get_speed(gamespeed_fps) * 0.4;
 		} else if (!delay_growth) {
-			image_xscale = lerp(image_xscale, target_scale, _dt * drag_growth_speed / 8);
-			image_yscale = lerp(image_yscale, target_scale, _dt * drag_growth_speed / 8);
-			if (abs(image_xscale - target_scale) < 0.02) {
+			image_xscale = lerp(image_xscale, target_scale, _dt * drag_growth_speed / 4);
+			image_yscale = lerp(image_yscale, target_scale, _dt * drag_growth_speed / 4);
+			if (abs(image_xscale - target_scale) < 0.04) {
 				image_xscale = target_scale;
 				image_yscale = target_scale;
 			}
@@ -131,6 +131,6 @@ particle_timer += _dt;
 #endregion
 
 #region Depth
-	depth = start_depth - ((image_yscale - 1.0)*200) - y;
-	depth = ceil(depth);
+	depth = start_depth - ((image_yscale - 1.0)*1600) - y;
+	depth = ceil(depth) + 500;
 #endregion

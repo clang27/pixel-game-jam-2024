@@ -3,10 +3,13 @@
   "%Name":"obj_cardboard_truck",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_cardboard_truck",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_truck","path":"objects/obj_truck/obj_truck.yy",},"propertyId":{"name":"accepted_trash","path":"objects/obj_truck/obj_truck.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Cardboard",},
+  ],
   "parent":{
     "name":"Trucks",
     "path":"folders/Objects/Trucks.yy",

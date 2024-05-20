@@ -16,9 +16,3 @@ if (trash_hovering_correctly || trash_hovering_incorrectly) {
 
 draw_self();
 shader_reset();
-
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_set_color(BLACK);
-draw_set_font(fnt_slim_18);
-draw_text(x, y+sprite_height, string(trash_holding)+"/"+string(trash_max_hold));

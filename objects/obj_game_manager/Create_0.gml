@@ -14,6 +14,8 @@ play_game_audio();
 game_is_over = false;
 paused = false;
 prior_button_state = false;
+high_score = 0;
+new_high_score = false;
 
 disable_all = function() {
 	obj_trash_manager.disabled = true;
@@ -79,6 +81,27 @@ unpause = function() {
 game_over = function() {
 	game_is_over = true;
 	disable_all();
+	new_high_score = save_high_score(obj_level_manager.most_points) == true;
 }
 
+save_high_score = function(_score) {
+	if (_score > high_score) {
+		ini_open("data.ini");
+	    ini_write_real("data", "highscore", _score);
+	    high_score = _score;
+		ini_close();
+		
+		return true;
+	}
+	
+	return false;
+}
+
+get_high_score = function() {
+	ini_open("data.ini");
+	high_score = ini_read_real("data", "highscore", 0);
+	ini_close();
+}
+
+get_high_score();
 obj_truck_manager.next_truck();

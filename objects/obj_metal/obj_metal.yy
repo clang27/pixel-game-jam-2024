@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_metal",
-    "path":"sprites/spr_metal/spr_metal.yy",
+    "name":"spr_metal23",
+    "path":"sprites/spr_metal23/spr_metal23.yy",
   },
   "spriteMaskId":null,
   "visible":true,

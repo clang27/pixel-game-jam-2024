@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_glass",
-    "path":"sprites/spr_glass/spr_glass.yy",
+    "name":"spr_glass20",
+    "path":"sprites/spr_glass20/spr_glass20.yy",
   },
   "spriteMaskId":null,
   "visible":true,

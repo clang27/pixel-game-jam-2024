@@ -1,5 +1,5 @@
-spawn_min_x = 50;
-spawn_max_x = room_width - 50 - GAMEPLAY_MARGIN_RIGHT;
+spawn_min_x = 58;
+spawn_max_x = room_width - 58 - GAMEPLAY_MARGIN_RIGHT;
 spawn_min_y = -10;
 spawn_max_y = -1;
 trash_count = 0;
@@ -28,7 +28,7 @@ get_random_index = function() {
 	var _rng = random(100);
 	show_debug_message("Trash RNG: {0}", _rng); 
 	
-	if (_rng < 40) {
+	if (_rng < 45) {
 		return 0;
 	} else if (_rng < 70) {
 		return 1;

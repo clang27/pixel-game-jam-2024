@@ -5,7 +5,7 @@ if (!paused && game_is_over) {
 	}
 }
 
-if (keyboard_check_pressed(vk_escape)) {
+if (keyboard_check_pressed(vk_escape) && !game_is_over) {
 	if (!paused) {
 		pause();
 	} else {

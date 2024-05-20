@@ -11,11 +11,14 @@ outline_color = shader_get_uniform(sh_outline, "color");
 
 disabled = false;
 icon_offset = 120;
+text_offset = 32;
 
 trash_holding = 0;
 trash_max_hold = irandom_range(3,6);
 
 would_be_too_big = function(_amount) {
+	if (accepted_trash == "Any") { return false; }
+	
 	return trash_holding + _amount > trash_max_hold;
 }
 

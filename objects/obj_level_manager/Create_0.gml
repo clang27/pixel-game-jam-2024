@@ -51,12 +51,8 @@ spawn_score_card = function(_truck_type, _trash_list) {
 }
 
 get_haul_points = function(_truck_type, _trash_list) {
-	if (obj_truck.trash_holding < obj_truck.trash_max_hold) {
+	if (_truck_type == "Any" || obj_truck.trash_holding < obj_truck.trash_max_hold) {
 		return 0;
-	}
-	
-	if (_truck_type == "Any") {
-		return perfect_haul_bonus;
 	}
 	
 	for (var _i = 0; _i < ds_list_size(_trash_list); _i++) {

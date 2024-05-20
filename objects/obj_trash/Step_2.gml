@@ -7,7 +7,7 @@
 	if(!dragging && abs(image_xscale-target_scale) < 0.2 && !highlighted && y <  obj_level_manager.get_death_y() - sprite_height / 1.8) {
 		var _y2 = y + (data.size * 4) - 4;
 		
-		play_particles_foreground(x, _y2, part_type_two, 1, depth-1);
+		play_particles_foreground(x, _y2, part_type_two, 1, depth - 1);
 	}
 #endregion
 

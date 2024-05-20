@@ -8,6 +8,7 @@ var _id = id;
 		current_wild_truck_timer -= _dt;
 		
 		if (current_wild_truck_timer <= 0) {
+			audio_play_sound(snd_drive_off, 30, false);
 			driving_down = true;
 			active_wild_truck = false;
 			current_wild_truck_timer = max_wild_truck_timer;

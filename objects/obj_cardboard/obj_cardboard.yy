@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cardboard",
-    "path":"sprites/spr_cardboard/spr_cardboard.yy",
+    "name":"spr_cardboard18",
+    "path":"sprites/spr_cardboard18/spr_cardboard18.yy",
   },
   "spriteMaskId":null,
   "visible":true,
